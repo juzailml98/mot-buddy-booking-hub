@@ -9,7 +9,7 @@ import { Calendar, Car, FileText, MessageSquare, Plus, User } from "lucide-react
 import DashboardStats from "@/components/dashboard/DashboardStats";
 import BookingList from "@/components/dashboard/BookingList";
 import BookingForm from "@/components/booking/BookingForm";
-import ChatInterface from "@/components/chat/ChatInterface";
+import ReportsManagement from "@/components/reports/ReportsManagement";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -48,9 +48,6 @@ const Dashboard = () => {
               <TabsTrigger value="bookings" className="data-[state=active]:bg-white">
                 Bookings
               </TabsTrigger>
-              <TabsTrigger value="messages" className="data-[state=active]:bg-white">
-                Messages
-              </TabsTrigger>
               <TabsTrigger value="reports" className="data-[state=active]:bg-white">
                 Reports
               </TabsTrigger>
@@ -83,7 +80,7 @@ const Dashboard = () => {
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="font-medium">Toyota Prius (LK70MNO)</p>
-                          <p className="text-sm text-gray-500">Completed on April 5, 2025</p>
+                          <p className="text-sm text-gray-500">MOT Report - Completed on April 5, 2025</p>
                         </div>
                         <Button variant="outline" size="sm">
                           View
@@ -92,7 +89,16 @@ const Dashboard = () => {
                       <div className="flex items-center justify-between">
                         <div>
                           <p className="font-medium">Honda Civic (BC22DEF)</p>
-                          <p className="text-sm text-gray-500">Completed on April 1, 2025</p>
+                          <p className="text-sm text-gray-500">Service Record - Completed on April 1, 2025</p>
+                        </div>
+                        <Button variant="outline" size="sm">
+                          View
+                        </Button>
+                      </div>
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="font-medium">Ford Focus (AB12CDE)</p>
+                          <p className="text-sm text-gray-500">Diagnostic Report - Completed on March 30, 2025</p>
                         </div>
                         <Button variant="outline" size="sm">
                           View
@@ -106,10 +112,10 @@ const Dashboard = () => {
                   <CardHeader>
                     <CardTitle className="flex items-center">
                       <MessageSquare className="mr-2 h-5 w-5" />
-                      Customer Messages
+                      Recent Messages
                     </CardTitle>
                     <CardDescription>
-                      Recent messages from customers
+                      Latest customer communications
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -120,7 +126,7 @@ const Dashboard = () => {
                         </div>
                         <div>
                           <div className="flex items-center justify-between">
-                            <p className="font-medium">Sarah Johnson</p>
+                            <p className="font-medium">Sarah Johnson (XY58ABC)</p>
                             <span className="text-xs text-gray-500">Yesterday</span>
                           </div>
                           <p className="text-sm text-gray-600">
@@ -137,7 +143,7 @@ const Dashboard = () => {
                         </div>
                         <div>
                           <div className="flex items-center justify-between">
-                            <p className="font-medium">Mike Williams</p>
+                            <p className="font-medium">Mike Williams (LK70MNO)</p>
                             <span className="text-xs text-gray-500">2 days ago</span>
                           </div>
                           <p className="text-sm text-gray-600">
@@ -168,32 +174,16 @@ const Dashboard = () => {
               </Card>
             </TabsContent>
             
-            <TabsContent value="messages">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Customer Messages</CardTitle>
-                  <CardDescription>
-                    View and manage conversations with customers
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ChatInterface />
-                </CardContent>
-              </Card>
-            </TabsContent>
-            
             <TabsContent value="reports">
               <Card>
                 <CardHeader>
-                  <CardTitle>MOT Reports</CardTitle>
+                  <CardTitle>Vehicle Reports Management</CardTitle>
                   <CardDescription>
-                    View and manage MOT test reports
+                    Create and manage different types of vehicle reports
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-center py-8 text-gray-500">
-                    Reports functionality to be implemented in future updates.
-                  </p>
+                  <ReportsManagement />
                 </CardContent>
               </Card>
             </TabsContent>
