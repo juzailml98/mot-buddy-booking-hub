@@ -9,6 +9,7 @@ import { Calendar, Car, FileText, MessageSquare, Plus, User } from "lucide-react
 import DashboardStats from "@/components/dashboard/DashboardStats";
 import BookingList from "@/components/dashboard/BookingList";
 import BookingForm from "@/components/booking/BookingForm";
+import ChatInterface from "@/components/chat/ChatInterface";
 
 const Dashboard = () => {
   const [activeTab, setActiveTab] = useState("overview");
@@ -46,6 +47,9 @@ const Dashboard = () => {
               </TabsTrigger>
               <TabsTrigger value="bookings" className="data-[state=active]:bg-white">
                 Bookings
+              </TabsTrigger>
+              <TabsTrigger value="messages" className="data-[state=active]:bg-white">
+                Messages
               </TabsTrigger>
               <TabsTrigger value="reports" className="data-[state=active]:bg-white">
                 Reports
@@ -160,6 +164,20 @@ const Dashboard = () => {
                 </CardHeader>
                 <CardContent>
                   <BookingList />
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="messages">
+              <Card>
+                <CardHeader>
+                  <CardTitle>Customer Messages</CardTitle>
+                  <CardDescription>
+                    View and manage conversations with customers
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ChatInterface />
                 </CardContent>
               </Card>
             </TabsContent>
