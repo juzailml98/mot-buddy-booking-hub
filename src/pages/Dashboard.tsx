@@ -48,9 +48,6 @@ const Dashboard = () => {
               <TabsTrigger value="bookings" className="data-[state=active]:bg-white">
                 Bookings
               </TabsTrigger>
-              <TabsTrigger value="reports" className="data-[state=active]:bg-white">
-                Reports
-              </TabsTrigger>
               <TabsTrigger value="customers" className="data-[state=active]:bg-white">
                 Customers
               </TabsTrigger>
